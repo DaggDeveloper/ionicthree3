@@ -1,0 +1,83 @@
+ <ion-header color="my">
+  <ion-navbar color="my">
+    <ion-title>
+            <ion-avatar id="logo">
+                <img src="assets/logo/LOGOTIPO.png">
+              </ion-avatar>   
+        
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<br>
+<ion-content padding>
+<ion-grid>
+ <ion-row><!--*ngIf="showCon" *ngIf="showDes"-->
+     <ion-col *ngIf="showCon"><div class="conec" ></div></ion-col>
+     <ion-col *ngIf="showDes"><div class="disc"></div></ion-col>
+ </ion-row>
+  <ion-row>
+    <ion-col>
+     <ion-item>
+      <ion-label>Seleccione Región</ion-label>
+        <ion-select [(ngModel)]="region" (ionChange)="getProvincias(region)">
+        <ion-option *ngFor="let reg of regiones | async" value="{{reg.idRegion}}" >{{ reg.nombreRegion }}</ion-option>   
+      </ion-select>
+    </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+        <ion-item>
+          <ion-label>Seleccione Provincia</ion-label>
+          <ion-select [(ngModel)]="provincia" (ionChange)="getCiudades(provincia)">
+            <ion-option *ngFor="let pro of pr" value="{{ pro.idProvincia }}">{{ pro.nombreProvincia }} </ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+        <ion-item>
+          <ion-label>Seleccione Comuna</ion-label>
+          <ion-select [(ngModel)]="ciudad" (ionChange)="getpoligos(ciudad)"><!---->
+            <ion-option  *ngFor="let ciu of ci" value="{{ciu.idCiudad}}" >{{ ciu.nombreCiudad }}</ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+        <ion-item *ngIf="showdatas">
+          <ion-label>Seleccione Poligono</ion-label>
+          <ion-select [(ngModel)]="poligonos" (ionChange)="gettpol(poligonos)">
+            <ion-option  *ngFor="let p of po" value="{{p.idPoligono}}" >{{p.nombrePoligono}}</ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col>
+        <ion-item *ngIf="showdatas">
+          <ion-label>Zona Poligono</ion-label>
+          <ion-select [(ngModel)]="tpoli">
+            <ion-option  *ngFor="let tp of tpoligono" value="{{tp.idTpo}}" >{{tp.nombretpo}}</ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col>
+        <p><button ion-button color="dark" block (click)="nextInfoPrincipal(ciudad,provincia,region)">Ingresar</button></p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+        <p><img *ngFor="let ru of ruta" src="{{ru.rutaimg}}"></p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+
+
+
+

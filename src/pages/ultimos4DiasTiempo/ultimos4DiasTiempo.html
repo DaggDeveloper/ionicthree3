@@ -1,0 +1,88 @@
+ <ion-header color="my">
+  <ion-navbar color="my">
+    <ion-title>
+            <ion-avatar id="logoleft">
+                <img src="assets/logo/LOGOTIPO.png">
+              </ion-avatar>   
+        
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<br>
+
+<ion-content class="cards-bg social-cards">
+
+<ion-card>
+<ion-title>Pronostico del Tiempo Ultimos 4 Días</ion-title>
+  
+  <ion-list>
+      <ion-card>
+          <ion-item *ngFor="let data of datosClima">
+            <ion-avatar item-left>
+              <img src="{{data.img1}}" >
+            </ion-avatar>
+            <h2>{{data.nameTipoClima1}}</h2>
+            <p>{{data.grados1}}</p>
+          </ion-item>
+          <ion-item *ngFor="let data of datosClima">
+            <ion-avatar item-left>
+              <img src="{{data.img2}}" >
+            </ion-avatar>
+            <h2>{{data.nameTipoClima2}}</h2>
+            <p>{{data.grados2}}</p>
+          </ion-item>
+      </ion-card>
+  </ion-list>
+  <!--<ion-list>
+    <ion-card >
+
+   <ion-item >
+    <ion-avatar item-left>
+      <img src="{{img1}}" >
+    </ion-avatar>
+    <h2>{{nombreClima1}}</h2>
+    <p>{{grados1}}</p>
+  </ion-item>
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="{{img2}}" >
+    </ion-avatar>
+    <h2>{{nombreClima2}}</h2>
+    <p>{{grados2}}</p>
+  </ion-item>
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="{{img3}}">
+    </ion-avatar>
+    <h2>{{nombreClima3}}</h2>
+    <p>{{grados3}}</p>
+  </ion-item>
+  <ion-item >
+    <ion-avatar item-left>
+      <img src="{{img4}}">
+    </ion-avatar>
+    <h2>{{nombreClima4}}</h2>
+    <p>{{grados4}}</p>
+  </ion-item>
+  <ion-card-content>
+    <p>{{fecha_clima}}</p>
+  </ion-card-content>
+</ion-card>
+      
+  </ion-list>-->
+  
+
+
+
+</ion-card>
+<p>
+      <img src="assets/banner/banner.png" alt="">
+  </p>
+</ion-content>
+
+<style>
+  .social-cards ion-col {
+    padding: 0;
+  }
+</style>
+

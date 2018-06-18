@@ -1,0 +1,24 @@
+ <ion-header color="my">
+  <ion-navbar color="my">
+    <ion-title>
+            <ion-avatar id="logoleft">
+                <img src="assets/logo/LOGOTIPO.png">
+              </ion-avatar>   
+        
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<br>
+
+<ion-content>
+
+<ion-list>
+    <button ion-item  class="item item-block item-ios" *ngFor="let task of Tbencinas | async" (click)="getDetalleBencina(task.idTipoBencina)">{{ task.nombreTipoBencina }}
+    </button>  
+</ion-list>
+
+<p>
+ <img  src="{{rutabanner}}">
+</p> 
+
+</ion-content>

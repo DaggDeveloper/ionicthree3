@@ -1,0 +1,46 @@
+ <ion-header color="my">
+  <ion-navbar color="my">
+    <ion-title>
+            <ion-avatar id="logoleft">
+                <img src="assets/logo/LOGOTIPO.png">
+              </ion-avatar>   
+        
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<br>
+
+<ion-content>
+ <ion-title>{{nombreBencina}}</ion-title>
+  <ion-list>
+      
+    <ion-item *ngFor="let listBencinas of b">
+      <ion-avatar item-left>
+        ${{listBencinas.precioBencina}}<!--<img src="assets/img/avatar-finn.png">-->
+      </ion-avatar>
+      <h2>{{listBencinas.nombreBencinera}}</h2>
+      <h3>{{listBencinas.calleBencinera}}</h3>
+      <p>{{listBencinas.fechaPublicacion}}</p>
+    </ion-item>
+
+    
+  </ion-list>
+  <p>
+ <img  src="{{rutabanner}}">
+</p> 
+</ion-content>
+
+<ion-content *ngIf="showGas">
+ <ion-title>{{nombreBencina}}</ion-title>
+  <ion-list>
+      
+    <ion-item *ngFor="let gas of listGas" (click)="detalleGas(gas.idGas)">
+      <h2>{{gas.Tgas}}</h2>
+    </ion-item>
+
+    
+  </ion-list>
+  <p>
+ <img  src="{{rutabanner}}">
+</p> 
+</ion-content>

@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-navbar color="my">
+    <ion-title><h6 text-wrap >{{nombreOpcion}}</h6></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="p-top"  *ngIf="showInfoAdicional">
+   
+    <ion-list>
+      <ion-item class="item item-text-wrap"   *ngFor="let data of ia">
+        <h3 text-wrap [innerHTML]="data.informacionAdicional" ></h3>
+      </ion-item>
+    </ion-list>
+<p>
+ <img  src="{{rutabanner}}">
+</p>
+</ion-content>
+
+<ion-content  *ngIf="showPlanCuadrante">
+    <ion-list>
+      <ion-item *ngFor="let data of pc">
+            <h2 text-wrap>{{data.cuadrante}}</h2>
+            <p text-wrap>{{data.recintoCargo}}</p>
+           <p text-wrap>{{data.telefonoCuadrante}}</p>
+         <p text-wrap>{{data.zonaCuadrante}}</p>
+      </ion-item>
+    </ion-list>
+<p>
+ <img  src="{{rutabanner}}">
+</p>
+</ion-content>
+
+
+<ion-content padding *ngIf="showcentrosMedicos">
+    <ion-list>
+      <ion-item *ngFor="let data of cm">
+           <h2>{{data.centroMedico}}</h2>
+            <h2>{{data.direccionCentro}}</h2>
+           <p text-wrap><strong>Atención:</strong> {{data.horarioAtencion}}</p>
+           <p text-wrap><strong>Solicitud de Hora:</strong> {{data.solicitudHora}}</p>
+           <p text-wrap><strong>Urgencia SAPU:</strong> {{data.horarioUrgencia}}</p>
+           <p text-wrap><strong>Urgencia ODONTO:</strong> {{data.horarioUrgencia}}</p>
+           <p text-wrap><strong>Otros Datos:</strong> {{data.otros}}</p>
+      </ion-item>
+    </ion-list>
+<p>
+ <img  src="{{rutabanner}}">
+</p>
+</ion-content>
+
+<ion-content padding *ngIf="showlocomocion">
+    <ion-list>
+      <ion-item   *ngFor="let data of lc">
+        <h3 text-wrap><strong>Tipo:</strong> {{data.locomocion}}</h3>
+        <p text-wrap>{{data.nombreLinea}}</p>
+        <p  ><strong>Recorrido:</strong></p>
+        <p text-wrap  [innerHTML]="data.recorridoLinea"></p>
+        <p text-wrap><strong>Terminal:</strong> {{data.direccionLinea}}</p>
+      </ion-item>
+    </ion-list>
+<p>
+ <img  src="{{rutabanner}}">
+</p>
+</ion-content>
+
+<ion-content padding *ngIf="showprogramassociales">
+    <ion-list>
+      <ion-item *ngFor="let data of ps ">
+        <h2 text-wrap [innerHTML]="data.ProgramaSocial"></h2>
+      </ion-item>
+    </ion-list>
+<p>
+ <img  src="{{rutabanner}}">
+</p>
+</ion-content>
+
+<ion-content padding *ngIf="showchilealdia">
+    <ion-list>
+      <ion-item  *ngFor="let data of chd ">
+        <h2 text-wrap>{{data.chileAlDia}}</h2>
+      </ion-item>
+    </ion-list>
+<p>
+ <img  src="{{rutabanner}}">
+</p>
+</ion-content>
+
+<ion-content padding *ngIf="showrevisionTecnica">
+    <ion-list>
+      <ion-item *ngFor="let data of rt ">
+        <h2 text-wrap>{{data.Concesionario}}</h2>
+        <p text-wrap>{{data.Direccion}}</p>
+       <p text-wrap>{{data.horario1}}</p>
+       <p text-wrap>{{data.horario2}}</p>
+       <p text-wrap><strong>Precios Autos, Camionestas, SW:</strong> ${{data.acsw}}</p>
+       <p text-wrap><strong>Precios Camiones y Buces:</strong> ${{data.ca_bu}}</p>
+       <p text-wrap><strong>Precio Taxis:</strong> ${{data.taxis}}</p>
+       <p text-wrap><strong>Teléfono Contacto:</strong> {{data.telefonos}}</p>
+      </ion-item>
+    </ion-list>
+<p>
+ <img  src="{{rutabanner}}">
+</p>
+</ion-content>
+
+<ion-content padding *ngIf="showmall">
+    <ion-list>
+      <ion-item *ngFor="let data of mll ">
+        <h2 text-wrap>{{data.nombreMall}}</h2>
+        <p text-wrap>{{data.direccionMall}}</p>
+       <p text-wrap><strong>Contacto:</strong> {{data.contactoMall}}</p>
+       <p text-wrap>{{data.horario1}}</p>
+       <p text-wrap>{{data.horario2}}</p>
+       <p text-wrap><strong>Información:</strong> {{data.otraInfo}}</p>
+      </ion-item>
+    </ion-list>
+<p>
+ <img  src="{{rutabanner}}">
+</p>
+</ion-content>
+
+<ion-content padding *ngIf="showsupermercado">
+    <ion-list>
+      <ion-item *ngFor="let data of sp ">
+        <h2 text-wrap>{{data.nombreSuper}}</h2>
+        <p text-wrap>{{data.direccionSuper}}</p>
+        <p text-wrap><strong>Contacto:</strong> {{data.contactoSuper}}</p>
+        <p text-wrap>{{data.horario1}}</p>
+        <p text-wrap>{{data.horario2}}</p>
+        <p text-wrap>{{data.otraInfo}}</p>
+      </ion-item>
+    </ion-list>
+<p>
+ <img  src="{{rutabanner}}">
+</p>
+</ion-content>
+
+<ion-content padding *ngIf="showhoteles">
+    <ion-list>
+      <ion-item *ngFor="let data of ho">
+        <h2 text-wrap>{{data.nombreHotel}}</h2>
+        <p text-wrap><strong>Dirección:</strong> {{data.direccionHotel}}</p>
+        <p text-wrap><strong>Contacto:</strong> {{data.contactoHotel}}</p>
+      </ion-item>
+    </ion-list>
+ <p>
+ <img  src="{{rutabanner}}">
+</p>   
+</ion-content>
